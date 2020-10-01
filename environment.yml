@@ -1,0 +1,9 @@
+name: philly-transit-data
+channels:
+  - conda-forge
+dependencies:
+  - python=3.8*
+  - pyproj
+  - geopandas
+  - flake8
+  - pip
