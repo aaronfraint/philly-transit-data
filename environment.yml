@@ -6,4 +6,5 @@ dependencies:
   - pyproj
   - geopandas
   - flake8
+  - jupyterlab
   - pip
