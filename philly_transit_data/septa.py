@@ -1,3 +1,6 @@
+"""
+Use the geojson URLs from SEPTA's open data portal to download spatial data.
+"""
 import pandas as pd
 import geopandas as gpd
 
@@ -41,6 +44,10 @@ class SEPTA:
         }
 
     def get_data_from_portal(self, mode: str = "bus"):
+        """ Extract stop and line data from .geojson URLs
+            Return two geodataframes: stops and lines
+        """
+
         if mode not in self.URLS:
             return KeyError
 
@@ -57,8 +64,14 @@ class SEPTA:
         return stops, lines
 
     def all_spatial_data(self):
+        """ Download data for all of SEPTA's modes
+            Return single stop and line geodataframes
+            with all SEPTA modes merged together.
+        """
+
         stops = []
         lines = []
+
         for mode in self.URLS:
             gdf_stop, gdf_line = self.get_data_from_portal(mode=mode)
 
