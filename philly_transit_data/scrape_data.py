@@ -108,10 +108,12 @@ class TransitData:
             Return two geodataframes: stops and lines
         """
 
-        if mode not in self.URL_CODES:
-            return KeyError
+        try:
+            url_codes = self.URL_CODES[mode]
+        except KeyError:
+            print(f"Mode '{mode}' is not defined. Check your spelling or add a new entry with add_data_source() ")
+            return None
 
-        url_codes = self.URL_CODES[mode]
         stop_url = self._make_url(url_codes["stops"])
         line_url = self._make_url(url_codes["lines"])
 
