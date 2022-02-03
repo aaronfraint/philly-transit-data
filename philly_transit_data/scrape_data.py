@@ -12,46 +12,40 @@ class TransitData:
 
     URL_CODES = {
         "SEPTA regional rail": {
-            # Latest data published 7/9/2018 (as of 10/1/2020)
-            "stops": "64eaa4539cf4429095c2c7bf25c629a2_0",
-            "lines": "48b0b600abaa4ca1a1bacf917a31c29a_0"
+            # Latest data published 12/17/21 (as of 2/3/2022)
+            "stops": "cf49c62fbc17430aa818e900556d207e_0",
+            "lines": "7ebff6bc356d4fa28d4a7e4147d03b32_0" 
         },
         "SEPTA trolley": {
-            # Latest data published 8/18/2020 (as of 10/1/2020)
-            "stops": "8aee4ea99d564e50b986e99a4669418a_0",
-            "lines": "2a4a268c0c2b4b04bcf1b2f1755d939a_0"
+            # Latest data published 12/17/21 (as of 2/3/2022)
+            "stops": "20e09781b71c4800a413796662646129_0", 
+            "lines": "33944ef79d2249aca38561a68dc3e06f_0"
         },
         "SEPTA bus": {
-            # Latest data published 5/6/2020 (as of 10/1/2020)
-            "stops": "897f2b081daf442bbcab66e9485b91b0_0",
-            "lines": "39f74b6d8b1b4b608933b5358d55be1c_0"
+            # Latest data published 12/17/21 (as of 2/3/2022)
+            "stops": "05374634f1ed45f7a910fcf2599545b9_0",
+            "lines": "06ad85efda2a4fc6bdaee0c146339624_0"
         },
-        "SEPTA subway - broad": {
-            # Latest data published 7/10/2018 (as of 10/1/2020)
-            "stops": "2e9037fd5bef406488ffe5bb67d21312_0",
-            "lines": "c051c18bb15444b6861a93fd247dde3d_0"
+        "SEPTA highspeed": {
+            # Latest data published 2/2/22 (as of 2/3/2022)
+            "stops": "af52d74b872045d0abb4a6bbbb249453_0",
+            "lines": "1e7754ca5f7d47e480a628e282466428_0" 
 
-        },
-        "SEPTA subway - market": {
-            # Latest data published 7/10/2018 (as of 10/1/2020)
-            "stops": "8c6e2575c8ad46eb887e6bb35825e1a6_0",
-            "lines": "6f4ae63a492c407eb95a9e56a6750e7f_0"
-
-        },
-        "SEPTA norristown high speed line": {
-            # Latest data published 7/10/2018 (as of 10/1/2020)
-            "stops": "f106f00a4ac34885ab35f4ebabb2aee0_0",
-            "lines": "8e685b473f4045d899dce7896ee5923a_0"
         },
         "NJT bus": {
-            # Latest data published 5/14/2020 (as of 10/2/2020)
-            "stops": "d1b2669cd9bf4ab6bb8e04f5326e8d77_9",
-            "lines": "8e7d1cc8cb8c473bb0dd0536593e1a80_10"
+            # Latest data published 9/29/21 (as of 2/3/2022)
+            "stops": "cb4184c3bb34488097d15138ce53a52e_0", 
+            "lines": "96fc4941f51e46dab452ac8509edb0cc_0"
         },
         "NJT rail": {
-            # Latest data published 5/4/2020 (as of 10/2/2020)
-            "stops": "acf1aa71053f4bb48a1aad7034f35e48_3",
-            "lines": "2117276b2d83440da81970db6a8c6edb_2"
+            # Latest data published 9/29/21 (as of 2/3/2022)
+            "stops": "4809dada94c542e0beff00600ee930f6_0",
+            "lines": "e6701817be974795aecc7f7a8cc42f79_0"
+        },
+        "NJT light rail": {
+            # Latest data published 8/25/21 (as of 2/3/2022)
+            "stops": "7877bb73757d4b1586338ccf2168705d_0",
+            "lines": "b432bf3bf40f40da9d43fa955b834274_0"
         },
     }
 
