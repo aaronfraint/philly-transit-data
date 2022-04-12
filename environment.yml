@@ -7,4 +7,5 @@ dependencies:
   - geopandas
   - flake8
   - jupyterlab
+  - black
   - pip
