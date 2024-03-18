@@ -3,6 +3,7 @@ Use the geojson URLs from SEPTA's open data portal to download spatial data.
 """
 import pandas as pd
 import geopandas as gpd
+import urllib
 
 
 class TransitData:
@@ -22,9 +23,9 @@ class TransitData:
             "lines": "33944ef79d2249aca38561a68dc3e06f_0",
         },
         "SEPTA bus": {
-            # Latest data published 12/17/21 (as of 2/3/2022)
-            "stops": "05374634f1ed45f7a910fcf2599545b9_0",
-            "lines": "06ad85efda2a4fc6bdaee0c146339624_0",
+            # Latest data published 9/25/2023 (as of 3/18/2024)
+            "stops": "51d1eb2a85a742eaa28ee2407c4e8b6f_0",
+            "lines": "51d1eb2a85a742eaa28ee2407c4e8b6f_0",
         },
         "SEPTA highspeed": {
             # Latest data published 2/2/22 (as of 2/3/2022)
@@ -32,9 +33,9 @@ class TransitData:
             "lines": "1e7754ca5f7d47e480a628e282466428_0",
         },
         "NJT bus": {
-            # Latest data published 9/29/21 (as of 2/3/2022)
-            "stops": "cb4184c3bb34488097d15138ce53a52e_0",
-            "lines": "96fc4941f51e46dab452ac8509edb0cc_0",
+            # Latest data published 1/16/2024 (as of 3/18/2024)
+            "stops": "fcb66a1ea358460bad1113e2d4ec2ec5_11",
+            "lines": "c79f24daf6a84b9d9d0cbb400631db3d_7",
         },
         "NJT rail": {
             # Latest data published 9/29/21 (as of 2/3/2022)
@@ -108,8 +109,14 @@ class TransitData:
         line_url = self._make_url(url_codes["lines"])
 
         # Use geopandas to read geojson data from the web
-        stops = gpd.read_file(stop_url)
-        lines = gpd.read_file(line_url)
+        try:
+            stops = gpd.read_file(stop_url)
+            lines = gpd.read_file(line_url)
+        except urllib.error.HTTPError:
+            print("BAD URL")
+            print(stop_url)
+            print(line_url)
+            print(mode)
 
         # Add new column to each with the name of the mode
         stops["src"] = mode
@@ -139,3 +146,8 @@ class TransitData:
         stops_singlepart = pd.concat([singleparts, multiparts.explode(index_parts=True)])
 
         return stops_singlepart, pd.concat(lines)
+
+if __name__ == '__main__':
+    transit_data = TransitData()
+    stops, lines = transit_data.all_spatial_data()
+
